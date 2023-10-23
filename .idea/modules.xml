@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ProjectBankRumos.iml" filepath="$PROJECT_DIR$/ProjectBankRumos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rumos.DigitalBank.Management.ConsoleApp/Rumos.DigitalBank.Management.ConsoleApp.iml" filepath="$PROJECT_DIR$/Rumos.DigitalBank.Management.ConsoleApp/Rumos.DigitalBank.Management.ConsoleApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rumos.DigitalBank.Management.Repository/Rumos.DigitalBank.Management.Repository.iml" filepath="$PROJECT_DIR$/Rumos.DigitalBank.Management.Repository/Rumos.DigitalBank.Management.Repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rumos.DigitalBank.Management.Services/Rumos.DigitalBank.Management.Services.iml" filepath="$PROJECT_DIR$/Rumos.DigitalBank.Management.Services/Rumos.DigitalBank.Management.Services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rumos.DigitalBank.Management.Transaction/Rumos.DigitalBank.Management.Transaction.iml" filepath="$PROJECT_DIR$/Rumos.DigitalBank.Management.Transaction/Rumos.DigitalBank.Management.Transaction.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+INDEX VERSION 1.132+C:\Users\utilizador1\ProjectBankRumos\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+4064741945.index
+3135337527.index
+1260548980.index
+3360262793.index
+2571104699.index
