@@ -1,25 +1,23 @@
 package pt.rumos.DigitalBank.management.model;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class BankAccount {
-
-    private final int accountNumber;
+    private final String accountNumber;
     private Customer primaryAccountHolder;
     private List<Customer> secondaryAccountHolders;
     private double balance;
-    private List<Transaction> transactionHistory;
+    private final List<Transaction> transactions;
 
-    public BankAccount(int accountNumber, Customer primaryAccountHolder) {
+    public BankAccount(String accountNumber, Customer primaryAccountHolder) {
         this.accountNumber = accountNumber;
         this.primaryAccountHolder = primaryAccountHolder;
         this.secondaryAccountHolders = new ArrayList<>();
         this.balance = 0.0;
-        this.transactionHistory = new ArrayList<>();
+        this.transactions = new ArrayList<>();
     }
 
-    public int getAccountNumber() {
+    public String getAccountNumber() {
         return accountNumber;
     }
 
@@ -27,7 +25,7 @@ public class BankAccount {
         return primaryAccountHolder;
     }
 
-    private List<Customer> getSecondaryAccountHolders() {
+    public List<Customer> getSecondaryAccountHolders() {
         return secondaryAccountHolders;
     }
 
@@ -35,22 +33,44 @@ public class BankAccount {
         return balance;
     }
 
-    public List<Transaction> getTransactionHistory() {
-        return transactionHistory;
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
     public void addSecondaryAccountHolder(Customer secondaryAccountHolder) {
-        if (secondaryAccountHolders.size() < 4) {
-            secondaryAccountHolders.add(secondaryAccountHolder);
-        } else {
-            throw new IllegalArgumentException("Maximum number of secondary account holders reached.");
+        secondaryAccountHolders.add(secondaryAccountHolder);
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            createTransaction(TransactionType.DEPOSIT, amount, null);
         }
     }
 
-    public void removeSecondaryAccountHolder(Customer secondaryAccountHolder) {
-        secondaryAccountHolders.remove(secondaryAccountHolder);
+    public boolean withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            createTransaction(TransactionType.WITHDRAW, amount, null);
+            return true;
+        }
+        return false;
+    }
+
+    public void transferTo(BankAccount recipient, double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            recipient.deposit(amount);
+            createTransaction(TransactionType.TRANSFER, amount, recipient.getAccountNumber());
+        }
+    }
+
+    private void createTransaction(TransactionType type, double amount, String recipientAccountNumber) {
+        Transaction transaction = new Transaction(type, amount, recipientAccountNumber);
+        transactions.add(transaction);
     }
 }
+
 
 
 
