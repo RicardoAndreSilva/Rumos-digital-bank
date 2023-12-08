@@ -1,6 +1,7 @@
 package pt.rumos.digitalBank.management.services;
 
 import pt.rumos.DigitalBank.management.model.CreditCard;
+import pt.rumos.digitabank.management.interfaces.ICreditCardService;
 
 import java.util.ArrayList;
 import java.util.List;

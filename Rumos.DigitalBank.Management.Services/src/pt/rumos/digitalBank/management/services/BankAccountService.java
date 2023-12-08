@@ -3,6 +3,7 @@ package pt.rumos.digitalBank.management.services;
 
 import pt.rumos.DigitalBank.management.model.BankAccount;
 import pt.rumos.DigitalBank.management.model.Customer;
+import pt.rumos.digitabank.management.interfaces.IBankAccountService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,5 +72,10 @@ public class BankAccountService implements IBankAccountService {
             }
         }
         return null;
+    }
+
+    public double getBalance(String accountNumber) {
+        BankAccount account = getAccountByNumber(accountNumber);
+        return account != null ? account.getBalance() : 0.0;
     }
 }

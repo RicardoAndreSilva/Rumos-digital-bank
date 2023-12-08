@@ -8,7 +8,7 @@ import java.util.List;
 public class CustomerService {
     private final static CustomerService INSTANCE;
 
-    //Manten uma referência constante para a mesma lista após a inicialização.
+
     private final List<Customer> registeredCustomers;
 
     static {

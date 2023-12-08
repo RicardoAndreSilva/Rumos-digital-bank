@@ -23,5 +23,11 @@ public class Console {
     }
 
 
+    public static int readInt() {
+        return scanner.nextInt();
+    }
 
+    public static double readDouble() {
+        return scanner.nextDouble();
+    }
 }

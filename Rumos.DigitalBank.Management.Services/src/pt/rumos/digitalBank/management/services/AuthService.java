@@ -2,13 +2,13 @@ package pt.rumos.digitalBank.management.services;
 
 import pt.rumos.DigitalBank.management.model.Customer;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class AuthService {
     private final static AuthService INSTANCE;
     private Customer authenticatedCustomer;
-    private List<Customer> registeredCustomers;
+    private final CustomerService customerService;
     private boolean isLoggedIn;
 
     static {
@@ -16,7 +16,8 @@ public class AuthService {
     }
 
     private AuthService() {
-        registeredCustomers = new ArrayList<>();
+
+        customerService = CustomerService.getInstance();
     }
 
     public static AuthService getInstance() {
@@ -32,6 +33,7 @@ public class AuthService {
     }
 
     public boolean login(String username, String password) {
+        List<Customer> registeredCustomers = customerService.getAllCustomers();
         for (Customer customer : registeredCustomers) {
             if (username.equals(customer.getUsername()) && password.equals(customer.getPassword())) {
                 authenticatedCustomer = customer;
@@ -47,4 +49,5 @@ public class AuthService {
         isLoggedIn = false;
     }
 }
+
 

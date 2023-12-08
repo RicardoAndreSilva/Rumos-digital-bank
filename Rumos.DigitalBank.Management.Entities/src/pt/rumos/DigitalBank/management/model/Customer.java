@@ -11,6 +11,7 @@ public class Customer {
     private String email;
     private String profession;
 
+
     public Customer(String username, String password, String name, String nif, String dateOfBirth, String phoneNumber, String mobileNumber, String email, String profession) {
         this.username = username;
         this.password = password;
@@ -93,4 +94,6 @@ public class Customer {
         this.profession = profession;
     }
 }
+
+
 

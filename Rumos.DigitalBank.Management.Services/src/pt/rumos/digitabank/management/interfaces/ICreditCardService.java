@@ -1,4 +1,4 @@
-package pt.rumos.digitalBank.management.services;
+package pt.rumos.digitabank.management.interfaces;
 
 import pt.rumos.DigitalBank.management.model.CreditCard;
 
